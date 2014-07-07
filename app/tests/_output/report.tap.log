@@ -1,0 +1,7 @@
+TAP version 13
+not ok 1 - Failure: sign up for a larabook account. (SignUpCept)
+  ---
+  message: 'Link or Button by name or CSS or XPath ''Sign Up'' was not found on page.'
+  severity: fail
+  ...
+1..1

@@ -1,0 +1,41 @@
+{
+    "event": "suiteStart",
+    "suite": "functional",
+    "tests": 1
+}{
+    "event": "testStart",
+    "suite": "functional",
+    "test": "Sign up for a larabook account. (SignUpCept)"
+}{
+    "event": "test",
+    "suite": "functional",
+    "test": "Sign up for a larabook account. (SignUpCept)",
+    "status": "fail",
+    "time": 1.3603510856628,
+    "trace": [
+        {
+            "file": "C:\\Users\\lotus\\projects\\larabook\\app\\tests\\functional\\FunctionalTester.php",
+            "line": 723,
+            "function": "runStep",
+            "class": "Codeception\\Scenario",
+            "type": "->",
+            "args": [
+                {
+                    "executed": true
+                }
+            ]
+        },
+        {
+            "file": "C:\\Users\\lotus\\projects\\larabook\\app\\tests\\functional\\SignUpCept.php",
+            "line": 7,
+            "function": "click",
+            "class": "FunctionalTester",
+            "type": "->",
+            "args": [
+                "Sign Up"
+            ]
+        }
+    ],
+    "message": "Link or Button by name or CSS or XPath 'Sign Up' was not found on page.",
+    "output": ""
+}
