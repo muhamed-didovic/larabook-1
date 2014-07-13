@@ -4,9 +4,15 @@ var sass = require('gulp-ruby-sass');
 
 gulp.task('sass', function()
 {
-    var options = {sourcemap: true, unixNewlines: true, style: 'compressed'};
+    var options = {unixNewlines: true, style: 'compressed'};
 
-    return gulp.src('app/assets/sass/**/*.scss')
+    gulp.src('app/assets/sass/main.scss')
         .pipe(sass(options))
         .pipe(gulp.dest('public/css'));
 });
+
+gulp.task('watch', function() {
+    gulp.watch('app/assets/sass/**/*.scss', ['sass']);
+});
+
+gulp.task('default', ['watch']);

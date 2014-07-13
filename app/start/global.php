@@ -1,5 +1,6 @@
 <?php
-
+Blade::setContentTags('{{', '}}', true);
+Blade::setContentTags('{{{', '}}}', false);
 /*
 |--------------------------------------------------------------------------
 | Register The Laravel Class Loader
@@ -49,6 +50,20 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
     Log::error($exception);
+});
+
+/*
+|--------------------------------------------------------------------------
+| Form Validation Error Handler
+|--------------------------------------------------------------------------
+|
+| Catches and handles the Laracasts\Validation\FormValidationException
+| thrown by the laracasts/validation package
+|
+*/
+App::error(function(Laracasts\Validation\FormValidationException $e, $code)
+{
+    return Redirect::back()->withInput()->withErrors($e->getErrors());
 });
 
 /*

@@ -6,7 +6,5 @@
     <div class="jumbotron">
         <h1>Welcome to Larabook!</h1>
         <p>Welcome to Larabook foo!</p>
-          <a class="btn btn-lg btn-primary" href="#" role="button">Sign Up!</a>
-        </p>
-      </div>
+        {{{ link_to_route('register.create', 'Sign Up!', null, ['class' => 'btn btn-lg btn-primary']) }}}
 @stop

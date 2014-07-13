@@ -4,7 +4,11 @@ class PagesController extends BaseController {
 
     public function splash()
     {
-        return View::make('pages.home');
+        $person = new stdClass;
+        $person->name = 'fred';
+        $person->job = 'butt scratcher';
+        $person->html = '<input type="text">fred</input>';
+        return View::make('pages.home', compact('person'));
     }
 
 }

@@ -45,6 +45,8 @@ return array(
         'Illuminate\Workbench\WorkbenchServiceProvider',
 
         //3rd party
+        'Laracasts\Commander\CommanderServiceProvider',
+        'Laracasts\Validation\ValidationServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
 
     ),

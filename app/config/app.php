@@ -78,7 +78,7 @@ return array(
     |
     */
 
-    'key' => 'YourSecretKey!!!',
+    'key' => 'tIE6GlBVEzsGuUidlelMDRxqmzKBhAQa',
 
     'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -124,6 +124,7 @@ return array(
 
         //3rd party
         'Laracasts\Commander\CommanderServiceProvider',
+        'Laracasts\Validation\ValidationServiceProvider',
     ),
 
     /*

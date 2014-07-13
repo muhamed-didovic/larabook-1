@@ -8,5 +8,7 @@
 //     dd($text->getData()->data->error); //this might be what I need in the spec
 // });
 
-Route::get('/', 'PagesController@splash');
+Route::get('/', ['as' => 'home', 'uses' => 'PagesController@splash']);
 
+Route::get('register', ['as' => 'register.create', 'uses' => 'RegistrationController@create']);
+Route::post('register', ['as' => 'register.store', 'uses' => 'RegistrationController@store']);
