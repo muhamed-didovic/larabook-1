@@ -8,7 +8,7 @@ I just learned about editing in full screen zen mode.
 
 And task lists :-)
 #Todo
-* [x] Learn more
-* [] Learn some more
+[x] Learn more
+[] Learn some more
 
 
