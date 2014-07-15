@@ -7,3 +7,5 @@ This version is bound to become very much modified from the original source beca
 # Notes:
 - ignore the t2s.sh file in the root unless you want to convert all tabs to spaces excluding the vendor directory. 
 - also ignore .editorconfig file because I'm not 100% certain I have it setup right and it's also for using spaces instead of tabs.
+
+Just testing different autocrlf settings
