@@ -21,3 +21,4 @@ $I->seeRecord('users', [
 ]);
 
 $I->assertTrue(Auth::check(), 'The user is logged in');
+

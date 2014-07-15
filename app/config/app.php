@@ -125,6 +125,7 @@ return array(
         //3rd party
         'Laracasts\Commander\CommanderServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
+        'Laracasts\Flash\FlashServiceProvider',
     ),
 
     /*
@@ -192,6 +193,8 @@ return array(
         'Validator'       => 'Illuminate\Support\Facades\Validator',
         'View'            => 'Illuminate\Support\Facades\View',
 
+        // 3rd party
+        'Flash'           => 'Laracasts\Flash\Flash',
     ),
 
 );

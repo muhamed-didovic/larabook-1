@@ -7,15 +7,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Larabook</a>
+            {{{ link_to_route('home', 'Larabook', null, ['class' => 'navbar-brand']) }}}
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
+
+
+            <ul class="nav navbar-nav navbar-right">
+            @if( $currentUser)
+                <li>{{{ link_to_route('logout', 'Logout')}}}</li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{{ $currentUser->username }}}<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#">Action</a></li>
                         <li><a href="#">Another action</a></li>
@@ -26,7 +28,11 @@
                         <li><a href="#">One more separated link</a></li>
                     </ul>
                 </li>
+                <li><img class="gravatar pull-left" src="http://www.gravatar.com/avatar/8a1346829a164648a4507019f3dc3875.png?s=50"></li>
+            @else
+                <li>{{{ link_to_route('login.create', 'Login') }}}</li>
             </ul>
+            @endif
         </div>
 
     </div>

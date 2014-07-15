@@ -5,10 +5,12 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 use Eloquent, Hash;
+use Laracasts\Commander\Events\EventGenerator;
+use Larabook\Registration\Events\UserRegistered;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
-    use UserTrait, RemindableTrait;
+    use UserTrait, RemindableTrait, EventGenerator;
 
     /**
      * The database table used by the model.
@@ -56,8 +58,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public static function register($username, $email, $password)
     {
         $user = new static(compact('username', 'email', 'password'));
+
+        $user->raise(new UserRegistered($user));
+
         return $user;
-        // raise event
     }
 
 }

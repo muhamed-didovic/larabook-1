@@ -9,6 +9,22 @@
 // });
 
 Route::get('/', ['as' => 'home', 'uses' => 'PagesController@splash']);
+Route::get('logout', ['as' => 'logout', 'uses' => 'SessionsController@destroy']);
 
-Route::get('register', ['as' => 'register.create', 'uses' => 'RegistrationController@create']);
-Route::post('register', ['as' => 'register.store', 'uses' => 'RegistrationController@store']);
+Route::group(['before' => 'guest'], function()
+{
+    //only require the guest filter
+    Route::get('login', ['as' => 'login.create', 'uses' => 'SessionsController@create']);
+    Route::get('register', ['as' => 'register.create', 'uses' => 'RegistrationController@create']);
+
+    //require both guest and csrf filter
+    Route::group(['before' => 'csrf'], function()
+    {
+
+        Route::post('register', ['as' => 'register.store', 'uses' => 'RegistrationController@store']);
+    });
+});
+
+Route::post('login', ['as' => 'login.store', 'uses' => 'SessionsController@store']);
+
+Route::get('statuses', 'StatusesController@index');

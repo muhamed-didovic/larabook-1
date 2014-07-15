@@ -1,7 +1,22 @@
 {
     "event": "suiteStart",
     "suite": "functional",
-    "tests": 1
+    "tests": 2
+}{
+    "event": "testStart",
+    "suite": "functional",
+    "test": "Login to my Larabook account (SignInCept)"
+}{
+    "event": "test",
+    "suite": "functional",
+    "test": "Login to my Larabook account (SignInCept)",
+    "status": "pass",
+    "time": 3.0130271911621,
+    "trace": [
+
+    ],
+    "message": "",
+    "output": ""
 }{
     "event": "testStart",
     "suite": "functional",
@@ -11,8 +26,10 @@
     "suite": "functional",
     "test": "Sign up for a larabook account. (SignUpCept)",
     "status": "pass",
-    "time": 2.265625,
-    "trace": [],
+    "time": 0.5843939781189,
+    "trace": [
+
+    ],
     "message": "",
     "output": ""
 }
