@@ -5,7 +5,8 @@ Working along with Jeffrey Way's awesome course on laracats.com
 This version is bound to become very much modified from the original source because I just can't help myself. I have to mess around with things :-)
 
 # Notes:
+- location of codeceptions files is different (see codeception.yml and app/tests dir)
+- extra directory for the user model app/larabook/Entities/User
+- added placeholder gravitar beside dropdown for user settings
 - ignore the t2s.sh file in the root unless you want to convert all tabs to spaces excluding the vendor directory. 
 - also ignore .editorconfig file because I'm not 100% certain I have it setup right and it's also for using spaces instead of tabs.
-
-still testing line ending problems
