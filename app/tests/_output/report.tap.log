@@ -1,7 +1,0 @@
-TAP version 13
-not ok 1 - Failure: post statuses to my profile (PostStatusCept)
-  ---
-  message: 'Failed asserting that   <bold>/statuses</bold>'
-  severity: fail
-  ...
-1..1

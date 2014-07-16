@@ -10,9 +10,9 @@ class StatusRepository {
     *
     *
     */
-    public function getAll(User $user)
+    public function getAll($userId)
     {
-        return $user->statuses;
+        return User::find($userId)->statuses;
     }
 
     /**

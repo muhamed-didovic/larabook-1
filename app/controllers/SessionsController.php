@@ -39,6 +39,8 @@ class SessionsController extends \BaseController {
             Flash::message('Welcome Back!');
             return Redirect::to('statuses');
         }
+
+        return Redirect::back()->withInput();
 }
 
     /**
