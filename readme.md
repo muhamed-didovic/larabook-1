@@ -1,10 +1,10 @@
 ## Larabook
 
-Working along with Jeffrey Way's awesome course on laracats.com
+Working along with Jeffrey Way's awesome course on laracasts.com
 
 This version is bound to become very much modified from the original source because I just can't help myself. I have to mess around with things :-)
 
-# Not passing status test at the moment
+# Up to date with publishing statuses episode
 
 ![Build Passing](http://cdn.memegenerator.net/instances/200x/52578731.jpg)
 
