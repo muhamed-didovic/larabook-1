@@ -1,4 +1,7 @@
 TAP version 13
-ok 1 - login to my larabook account (SignInCept)
-ok 2 - sign up for a larabook account. (SignUpCept)
-1..2
+not ok 1 - Failure: post statuses to my profile (PostStatusCept)
+  ---
+  message: 'Failed asserting that   <bold>/statuses</bold>'
+  severity: fail
+  ...
+1..1

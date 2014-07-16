@@ -31,9 +31,9 @@
                 <li><img class="gravatar pull-left" src="http://www.gravatar.com/avatar/8a1346829a164648a4507019f3dc3875.png?s=50"></li>
             @else
                 <li>{{{ link_to_route('login.create', 'Login') }}}</li>
+                <li>{{{ link_to_route('register.create', 'Register') }}}</li>
             </ul>
             @endif
         </div>
-
     </div>
 </nav>

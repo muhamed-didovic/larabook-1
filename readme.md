@@ -4,6 +4,10 @@ Working along with Jeffrey Way's awesome course on laracats.com
 
 This version is bound to become very much modified from the original source because I just can't help myself. I have to mess around with things :-)
 
+# Not passing status test at the moment
+
+![Build Passing](http://cdn.memegenerator.net/instances/200x/52578731.jpg)
+
 # Notes:
 - location of codeceptions files is different (see codeception.yml and app/tests dir)
 - extra directory for the user model app/larabook/Entities/User

@@ -1,7 +1,6 @@
 <?php namespace Codeception\Module;
 
 use Laracasts\TestDummy\Factory as TestDummy;
-use Auth;
 
 class FunctionalHelper extends \Codeception\Module
 {
@@ -21,15 +20,20 @@ class FunctionalHelper extends \Codeception\Module
 
     public function haveAnAccount($overrides = [])
     {
-        TestDummy::create('Larabook\Entities\User\User', $overrides);
+        $this->have('Larabook\Entities\User\User', $overrides);
     }
 
-    public function logout()
+    public function postAStatus($body)
     {
-        if(Auth::check())
-        {
-            Auth::logout();
-        }
+        $I = $this->getModule('Laravel4');
+        $I->fillField('body', $body);
+        $I->click('Post Status');
+        //$this->have('Larabook\Entities\Status\Status', $overrides);
+    }
+
+    protected function have($model, $overrides = [])
+    {
+        return TestDummy::create($model, $overrides);
     }
 
 }

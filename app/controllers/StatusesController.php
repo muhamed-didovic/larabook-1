@@ -1,6 +1,35 @@
 <?php
 
+use Larabook\Validation\Forms\StatusForm;
+use Larabook\Commanding\Status\PublishStatusCommand;
+use Larabook\Entities\Status\StatusRepository;
+use Larabook\Core\CommandBusTrait;
+
 class StatusesController extends \BaseController {
+
+    use CommandBusTrait;
+
+    /**
+    * @var StatusForm $statusForm
+    */
+    protected $statusForm;
+
+     /**
+    * @var StatusRepository $statusRepository
+    */
+    protected $statusRepository;
+
+    /**
+    * The StatusesController constructor
+    *
+    * @param StatusForm $statusForm
+    * @return void
+    */
+    public function __construct(StatusForm $statusForm, StatusRepository $statusRepository)
+    {
+        $this->statusForm = $statusForm;
+        $this->statusRepository = $statusRepository;
+    }
 
     /**
      * Display a listing of the resource.
@@ -9,7 +38,9 @@ class StatusesController extends \BaseController {
      */
     public function index()
     {
-        return View::make('statuses.index');
+        $statuses = $this->statusRepository->getAll(Auth::user());
+        // dd($statuses);
+        return View::make('statuses.index', compact('statuses'));
     }
 
 
@@ -20,7 +51,7 @@ class StatusesController extends \BaseController {
      */
     public function create()
     {
-        //
+        //Not in use because form is on the timeline page
     }
 
 
@@ -31,7 +62,16 @@ class StatusesController extends \BaseController {
      */
     public function store()
     {
-        //
+        $input = Input::only('body');
+
+        $this->statusForm->validate($input);
+
+        $this->executeCommand(
+            new PublishStatusCommand($input['body'], Auth::user()->id)
+        );
+
+        Flash::message('Your status has been updated');
+        return Redirect::refresh();
     }
 
 

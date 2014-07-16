@@ -20,11 +20,14 @@ Route::group(['before' => 'guest'], function()
     //require both guest and csrf filter
     Route::group(['before' => 'csrf'], function()
     {
-
+        Route::post('login', ['as' => 'login.store', 'uses' => 'SessionsController@store']);
         Route::post('register', ['as' => 'register.store', 'uses' => 'RegistrationController@store']);
     });
 });
 
-Route::post('login', ['as' => 'login.store', 'uses' => 'SessionsController@store']);
+Route::group(['before' => 'auth|csrf'], function()
+{
+    Route::post('statuses', ['as' => 'status.store', 'uses' => 'StatusesController@store']);
+});
 
-Route::get('statuses', 'StatusesController@index');
+Route::get('statuses', ['as' => 'statuses', 'uses' => 'StatusesController@index']);
