@@ -1,0 +1,12 @@
+Larabook\Entities\User\User:
+    username: $string
+    email: $string@example.com
+    created_at: $date
+    updated_at: $date
+
+Larabook\Entities\Status\Status:
+    user_id:
+        type: Larabook\Entities\User\User
+    body: $text
+    created_at: $date
+    updated_at: $date
