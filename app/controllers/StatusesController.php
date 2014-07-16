@@ -38,8 +38,8 @@ class StatusesController extends \BaseController {
      */
     public function index()
     {
-        $statuses = $this->statusRepository->getAll(Auth::user()->id);
-        // dd($statuses);
+        $statuses = $this->statusRepository->getAll(Auth::user());
+
         return View::make('statuses.index', compact('statuses'));
     }
 
