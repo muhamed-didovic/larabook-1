@@ -31,4 +31,6 @@ Route::group(['before' => 'auth|csrf'], function()
     Route::post('statuses', ['as' => 'status.store', 'uses' => 'StatusesController@store']);
 });
 
+Route::get('settings/{username}', ['as' => 'user.settings', 'uses' => 'UsersController@settings'])->before('auth');
+
 Route::post('login', ['as' => 'login.store', 'uses' => 'SessionsController@store']);
