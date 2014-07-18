@@ -4,7 +4,7 @@ Working along with Jeffrey Way's awesome course on laracasts.com
 
 This version is bound to become very much modified from the original source because I just can't help myself. I have to mess around with things :-)
 
-# Up to date with integration testing repository episode
+# Up to date with gravatars and view presenter episode
 
 ![Build Passing](http://cdn.memegenerator.net/instances/200x/52578731.jpg)
 
