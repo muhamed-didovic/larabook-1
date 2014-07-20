@@ -1,8 +1,9 @@
-<?php
+<?php namespace Larabook\Controllers;
 
+use View, Input, Auth, Redirect, Flash;
 use Larabook\Validation\Forms\LoginForm;
 
-class SessionsController extends \BaseController {
+class SessionsController extends BaseController {
 
     protected $loginForm;
 

@@ -1,4 +1,6 @@
-<?php
+<?php namespace Larabook\Controllers;
+
+use View, Input, Auth, Redirect, Flash;
 
 class UsersController extends BaseController {
 

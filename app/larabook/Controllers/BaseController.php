@@ -1,4 +1,6 @@
-<?php
+<?php namespace Larabook\Controllers;
+
+use Controller, View, Auth;
 
 class BaseController extends Controller {
 

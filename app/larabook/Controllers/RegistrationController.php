@@ -1,5 +1,6 @@
-<?php
+<?php namespace Larabook\Controllers;
 
+use View, Input, Auth, Redirect, Flash;
 use Larabook\Validation\Forms\RegistrationForm;
 use Larabook\Registration\RegisterUserCommand;
 use Larabook\Core\CommandBusTrait;
