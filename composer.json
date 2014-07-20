@@ -19,13 +19,13 @@
     "autoload": {
         "classmap": [
             "app/commands",
-            "app/controllers",
             "app/database/migrations",
             "app/database/seeds",
             "app/tests/TestCase.php"
         ],
         "psr-4": {
-            "Larabook\\": "app/larabook"
+            "Larabook\\": "app/larabook",
+            "Api\\": "app/api/v1"
         }
     },
     "scripts": {
