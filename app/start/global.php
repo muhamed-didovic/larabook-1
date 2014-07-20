@@ -92,5 +92,4 @@ App::down(function()
 | definitions instead of putting them all in the main routes file.
 |
 */
-
-require app_path().'/filters.php';
+// Do not require the filters file. It is being loaded by LarabookServiceProvider
