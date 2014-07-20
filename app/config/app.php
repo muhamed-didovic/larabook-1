@@ -122,6 +122,10 @@ return array(
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
 
+        //api
+        //'Api\ApiServiceProvider',
+        'Larabook\LarabookServiceProvider',
+
         //3rd party
         'Laracasts\Commander\CommanderServiceProvider',
         'Laracasts\Validation\ValidationServiceProvider',
