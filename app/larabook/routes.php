@@ -68,4 +68,13 @@ Route::get('settings/{username}', [
     'uses' => 'Larabook\Controllers\UsersController@settings'
 ]);
 
+/*
+|--------------------------------------------------------------------------
+| Users
+|--------------------------------------------------------------------------
+*/
+Route::get('users', [
+    'as' => 'users.index',
+    'uses' => 'Larabook\Controllers\UsersController@index'
+]);
 

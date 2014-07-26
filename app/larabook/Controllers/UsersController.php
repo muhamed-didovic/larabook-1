@@ -1,8 +1,23 @@
 <?php namespace Larabook\Controllers;
 
 use View, Input, Auth, Redirect, Flash;
+use Larabook\Entities\User\UserRepository;
 
 class UsersController extends BaseController {
+
+    protected $repository;
+
+    public function __construct(UserRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
+    public function index()
+    {
+        $users = $this->repository->getPaginated(10);
+
+        return View::make('users.index', compact('users'));
+    }
 
     public function settings($username)
     {

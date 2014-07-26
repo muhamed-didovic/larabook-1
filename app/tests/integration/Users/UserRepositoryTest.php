@@ -9,6 +9,7 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
     * @var \IntegrationTester
     */
     protected $tester;
+    protected $repo;
 
     protected function _before()
     {
@@ -37,6 +38,15 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
         //     'email' => 'john@gmail.com'
         // ]);
 
+    }
+
+    public function it_paginates_all_users()
+    {
+        TestDummy::times(4)->create('Larabook\Entities\User\User');
+
+        $results = $this->repo->getPaginated(2);
+
+        $this->assertCount(2, $results);
     }
 
 
