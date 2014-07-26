@@ -23,6 +23,6 @@ class UserRepository {
     */
     public function getPaginated($limit = 25)
     {
-        return User::simplePaginate($limit);
+        return User::orderBy('username', 'asc')->simplePaginate($limit);
     }
 }
