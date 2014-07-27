@@ -20,9 +20,10 @@
                         <img class="top-nav-gravatar" src="{{ $currentUser->present()->gravatar(35) }}" alt="{{ $currentUser->username }}">
                         {{{ $currentUser->username }}}<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li>
+                            <i class="glyphicon glyphicon-eye-open"></i>
+                            {{{ link_to_route('users.profile', 'Me', [$currentUser->username]) }}}
+                        </li>
                         <li class="divider"></li>
                         <li><i class="glyphicon glyphicon-cog"></i>{{{ link_to_route('user.settings', 'Settings', ['username' => $currentUser->username])}}}</li>
                         <li class="divider"></li>

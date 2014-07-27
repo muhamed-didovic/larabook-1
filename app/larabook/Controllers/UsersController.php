@@ -30,4 +30,12 @@ class UsersController extends BaseController {
         $settings = ['setting1' => 'foo', 'setting2' => 'bar'];
         return View::make('users.settings', compact('settings'));
     }
+
+    public function show($username)
+    {
+        //validate the url input
+        $user = $this->repository->findByUsernameWithStatuses($username);
+
+        return View::make('users.show', compact('user'));
+    }
 }

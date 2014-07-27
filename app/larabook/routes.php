@@ -78,3 +78,8 @@ Route::get('users', [
     'uses' => 'Larabook\Controllers\UsersController@index'
 ]);
 
+Route::get('@{username}', [
+    'as' => 'users.profile',
+    'uses' => 'Larabook\Controllers\UsersController@show'
+]);
+
