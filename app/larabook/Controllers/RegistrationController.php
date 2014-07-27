@@ -3,12 +3,11 @@
 use View, Input, Auth, Redirect, Flash;
 use Larabook\Validation\Forms\RegistrationForm;
 use Larabook\Registration\RegisterUserCommand;
-use Larabook\Core\CommandBusTrait;
+use Laracasts\Commander\CommanderTrait;
 
 class RegistrationController extends BaseController {
 
-    use CommandBusTrait;
-
+    use CommanderTrait;
     /**
     * @var RegistrationForm
     */
@@ -42,15 +41,11 @@ class RegistrationController extends BaseController {
     */
     public function store()
     {
-        $this->registrationForm->validate(
-            Input::only('username', 'email', 'password', 'password_confirmation')
-        );
+        $input = Input::only('username', 'email', 'password', 'password_confirmation');
 
-        extract(Input::only('username', 'email', 'password'));
+        $this->registrationForm->validate($input);
 
-        $user = $this->executeCommand(
-            new RegisterUserCommand($username, $email, $password)
-        );
+        $user = $this->execute(RegisterUserCommand::class, $input);
 
         Auth::login($user);
 

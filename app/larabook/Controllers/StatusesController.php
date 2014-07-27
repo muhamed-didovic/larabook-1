@@ -4,11 +4,11 @@ use View, Input, Auth, Redirect, Flash;
 use Larabook\Validation\Forms\StatusForm;
 use Larabook\Commanding\Status\PublishStatusCommand;
 use Larabook\Entities\Status\StatusRepository;
-use Larabook\Core\CommandBusTrait;
+use Laracasts\Commander\CommanderTrait;
 
 class StatusesController extends BaseController {
 
-    use CommandBusTrait;
+    use CommanderTrait;
 
     /**
     * @var StatusForm $statusForm
@@ -67,9 +67,9 @@ class StatusesController extends BaseController {
 
         $this->statusForm->validate($input);
 
-        $this->executeCommand(
-            new PublishStatusCommand($input['body'], Auth::user()->id)
-        );
+        $input['userId'] = Auth::user()->id;
+
+        $user = $this->execute(PublishStatusCommand::class, $input);
 
         Flash::message('Your status has been updated');
         return Redirect::back();
