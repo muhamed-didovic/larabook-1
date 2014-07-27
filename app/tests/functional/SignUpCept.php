@@ -1,7 +1,7 @@
 <?php
 $I = new FunctionalTester($scenario);
 $I->am('a guest');
-$I->wantTo('Sign up for a larabook account.');
+$I->wantTo('sign up for a larabook account');
 
 $I->amOnPage('/');
 $I->click('Sign Up');
