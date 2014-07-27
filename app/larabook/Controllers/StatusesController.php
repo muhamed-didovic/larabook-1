@@ -4,11 +4,8 @@ use View, Input, Auth, Redirect, Flash;
 use Larabook\Validation\Forms\StatusForm;
 use Larabook\Commanding\Status\PublishStatusCommand;
 use Larabook\Entities\Status\StatusRepository;
-use Laracasts\Commander\CommanderTrait;
 
 class StatusesController extends BaseController {
-
-    use CommanderTrait;
 
     /**
     * @var StatusForm $statusForm

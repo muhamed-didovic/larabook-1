@@ -1,8 +1,11 @@
 <?php namespace Larabook\Controllers;
 
 use Controller, View, Auth;
+use Laracasts\Commander\CommanderTrait;
 
 class BaseController extends Controller {
+
+    use CommanderTrait;
 
     /**
      * Setup the layout used by the controller.

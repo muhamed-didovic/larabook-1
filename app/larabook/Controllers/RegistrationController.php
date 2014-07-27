@@ -3,11 +3,9 @@
 use View, Input, Auth, Redirect, Flash;
 use Larabook\Validation\Forms\RegistrationForm;
 use Larabook\Registration\RegisterUserCommand;
-use Laracasts\Commander\CommanderTrait;
 
 class RegistrationController extends BaseController {
 
-    use CommanderTrait;
     /**
     * @var RegistrationForm
     */
