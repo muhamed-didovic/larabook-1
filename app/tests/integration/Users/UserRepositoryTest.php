@@ -40,6 +40,7 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
 
     }
 
+    /** @test */
     public function it_paginates_all_users()
     {
         TestDummy::times(4)->create('Larabook\Entities\User\User');
@@ -49,6 +50,16 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
         $this->assertCount(2, $results);
     }
 
+    /** @test */
+    public function it_finds_a_user_with_statuses_by_username()
+    {
+        $statuses = TestDummy::times(3)->create('Larabook\Entities\Status\Status');
+        $username = $statuses[0]->user->username;
 
+        $user = $this->repo->findByUsernameWithStatuses($username);
+
+        $this->assertEquals($username, $user->username);
+        $this->assertCount(3, $user->statuses);
+    }
 
 }
