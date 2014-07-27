@@ -49,6 +49,7 @@ Route::post('register', [
 */
 Route::get('statuses', [
     'as' => 'statuses',
+    'before' => 'auth',
     'uses' => 'Larabook\Controllers\StatusesController@index'
 ]);
 Route::post('statuses', [
