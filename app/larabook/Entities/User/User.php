@@ -88,8 +88,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     * @param User $user
     * @return bool
     */
-    public function isCurrent(User $user)
+    public function isCurrent(User $user = null)
     {
+        if(is_null($user)) return false;
+
         return $this->username == $user->username;
     }
 
