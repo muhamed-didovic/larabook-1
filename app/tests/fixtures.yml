@@ -1,6 +1,7 @@
 Larabook\Entities\User\User:
-    username: $string
-    email: $string@example.com
+    #$integer suffix is auto-incrementing and avoids duplicates
+    username: $string$integer
+    email: $string$integer@example.com
     created_at: $date
     updated_at: $date
 
