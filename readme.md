@@ -9,7 +9,7 @@ Anyone using this to follow along, none of the lesson code has changed except fo
 
 Controllers, routes, and filters moved, a service provider was added, and all the new stuff in the api/v1 directory which is just a starting point. Notice in config/app and config/local/app how the api service provider is commented out. You really don't want to run both an app and a api from the same laravel app because of security and the potential for things to conflict such as an auth filter for the app and an auth filter for the api. Already found that out the hard way. If both service providers are loaded the application tries to use the auth filter defined for the api.
 
-### Up to date with dummy users and statuses episode
+### Up to date with profiles episode
 
 Yep after all the changes you can still rely on Borats' two thumbs up. Thoroughly tested and all is well.
 ![Build Passing](http://cdn.memegenerator.net/instances/200x/52578731.jpg)
