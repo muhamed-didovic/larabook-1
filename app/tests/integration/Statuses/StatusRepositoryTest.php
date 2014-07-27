@@ -12,10 +12,6 @@ class StatusRepositoryTest extends \Codeception\TestCase\Test
 
     protected function _before()
     {
-        //if the repo had injected deps we would use
-        //$this->tester->grabService('Larabook\Entities\Status\StatusRepository');
-
-        //but since it don't, this will do :-)
         $this->repo = new StatusRepository;
     }
 
