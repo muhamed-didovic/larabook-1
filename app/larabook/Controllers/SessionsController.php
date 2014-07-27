@@ -35,13 +35,16 @@ class SessionsController extends BaseController {
 
         $this->loginForm->validate($input);
 
-        if( Auth::attempt($input))
+        if( ! Auth::attempt($input))
         {
-            Flash::message('Welcome Back!');
-            return Redirect::to('statuses');
+            Flash::message('Invalid Credentials');
+
+             return Redirect::back()->withInput();
         }
 
-        return Redirect::back()->withInput();
+        Flash::message('Welcome Back!');
+
+        return Redirect::to('statuses');
 }
 
     /**
