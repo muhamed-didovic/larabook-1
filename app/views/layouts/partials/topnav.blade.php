@@ -11,7 +11,9 @@
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example">
-
+            <ul class="nav navbar-nav">
+                <li class="active">{{{ link_to_route('users.index', 'Browse Artisans') }}}</li>
+            </ul>
 
             <ul class="nav navbar-nav navbar-right">
             @if( $currentUser)
