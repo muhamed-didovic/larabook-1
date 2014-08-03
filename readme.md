@@ -11,7 +11,7 @@ Controllers, routes, and filters moved, a service provider was added, and all th
 
 Went ahead and moved views into the larabook dir because they belong there since I also have an api namespace and a json api does not make use of views.
 
-### Up to date with refactoring session #1 episode
+### Up to date with following users lesson
 
 Yep after all the changes you can still rely on Borats' two thumbs up. Thoroughly tested and all is well.
 ![Build Passing](http://cdn.memegenerator.net/instances/200x/52578731.jpg)
