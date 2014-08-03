@@ -84,3 +84,17 @@ Route::get('@{username}', [
     'uses' => 'Larabook\Controllers\UsersController@show'
 ]);
 
+/*
+|--------------------------------------------------------------------------
+| Follows
+|--------------------------------------------------------------------------
+*/
+Route::post('follows', [
+    'as' => 'follows.store',
+    'uses' => 'Larabook\Controllers\FollowsController@store'
+]);
+
+Route::delete('follows/{id}', [
+    'as' => 'follows.destroy',
+    'uses' => 'Larabook\Controllers\FollowsController@destroy'
+]);
