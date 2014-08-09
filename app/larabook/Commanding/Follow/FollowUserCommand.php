@@ -1,6 +1,6 @@
 <?php namespace Larabook\Commanding\Follow;
 
-use Exception;
+use InvalidArgumentException;
 
 class FollowUserCommand {
 
@@ -16,7 +16,7 @@ class FollowUserCommand {
     public function getUserIdToFollow()
     {
         if(! is_numeric($this->userIdToFollow))
-            throw new Exception('not a number');
+            throw new InvalidArgumentException ('Expects id to be an integer.');
 
         return $this->userIdToFollow;
     }
@@ -24,7 +24,7 @@ class FollowUserCommand {
     public function getUserId()
     {
          if(! is_numeric($this->userIdToFollow))
-            throw new Exception('not a number');
+            throw new InvalidArgumentException ('Expects id to be an integer.');
 
         return $this->userId;
     }
