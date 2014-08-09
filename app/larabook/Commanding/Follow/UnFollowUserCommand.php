@@ -1,6 +1,6 @@
 <?php namespace Larabook\Commanding\Follow;
 
-use Exception;
+use InvalidArgumentException;
 
 class UnFollowUserCommand {
 
@@ -16,7 +16,7 @@ class UnFollowUserCommand {
     public function getUserIdToUnFollow()
     {
         if(! is_numeric($this->userIdToUnFollow))
-            throw new Exception('not a number');
+            throw new InvalidArgumentException ('Expects id to be an integer.');
 
         return $this->userIdToUnFollow;
     }
@@ -24,7 +24,7 @@ class UnFollowUserCommand {
     public function getUserId()
     {
          if(! is_numeric($this->userIdToUnFollow))
-            throw new Exception('not a number');
+            throw new InvalidArgumentException ('Expects id to be an integer.');
 
         return $this->userId;
     }
