@@ -91,6 +91,7 @@ Route::get('@{username}', [
 */
 Route::post('follows', [
     'as' => 'follows.store',
+    'before' => 'auth',
     'uses' => 'Larabook\Controllers\FollowsController@store'
 ]);
 
