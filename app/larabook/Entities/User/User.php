@@ -8,10 +8,11 @@ use Eloquent, Hash;
 use Laracasts\Commander\Events\EventGenerator;
 use Larabook\Registration\Events\UserRegistered;
 use Laracasts\Presenter\PresentableTrait;
+use Larabook\Entities\User\FollowableTrait;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
-    use UserTrait, RemindableTrait, EventGenerator, PresentableTrait;
+    use UserTrait, RemindableTrait, EventGenerator, PresentableTrait, FollowableTrait;
 
     /**
      * The database table used by the model.
@@ -93,25 +94,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         if(is_null($user)) return false;
 
         return $this->username == $user->username;
-    }
-
-    public function follows()
-    {
-        return $this->belongsToMany(self::class, 'follows', 'follower_id', 'followed_id')->withTimestamps();
-    }
-
-    public function followers()
-    {
-        return $this->belongsToMany(self::class, 'follows', 'followed_id', 'follower_id')->withTimestamps();
-    }
-
-    public function isFollowedBy(User $currentUser = null)
-    {
-        if(is_null($currentUser)) return false;
-
-        $followedIds = $currentUser->follows()->lists('followed_id');
-
-        return in_array($this->id, $followedIds);
     }
 
 }
