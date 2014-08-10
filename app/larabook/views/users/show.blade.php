@@ -10,7 +10,10 @@
 
                 <div class="media-body">
                     <h1 class="media-heading">{{ $user->username }}</h1>
-                    <p class="text-muted">{{ $statusCount = $user->statuses->count() }} {{ str_plural('Status', $statusCount) }}</p>
+                    <ul class="list-inline text-muted">
+                        <li>{{ $user->present()->statusCount }}</li>
+                        <li>{{ $user->present()->followerCount }}</li>
+                    </ul>
                 </div>
             </div>
 
