@@ -16,7 +16,9 @@ class LarabookServiceProvider extends ServiceProvider {
     *
     * @var array
     */
-    private $bindings = [];
+    private $bindings = [
+
+    ];
 
     /**
     * Array of helper files, usually only one but allows for multiple files
@@ -27,11 +29,16 @@ class LarabookServiceProvider extends ServiceProvider {
         'Larabook/helpers.php'
     ];
 
+    private $commands = [
+        'larabook.foo' => 'Larabook\Console\FooCommand'
+    ];
+
     public function boot()
     {
         $this->loadFilters();
         $this->loadRoutes();
         $this->loadHelpers();
+        $this->loadCommands();
     }
 
     public function register()
@@ -62,6 +69,19 @@ class LarabookServiceProvider extends ServiceProvider {
         foreach($this->helpers as $helper)
         {
             require app_path() . '/' . $helper;
+        }
+    }
+
+    private function loadCommands()
+    {
+        foreach($this->commands as $command => $class)
+        {
+            $this->app->bindShared($command, function($app) use ($class)
+            {
+                return $app->make($class);
+            });
+
+            $this->commands($command);
         }
     }
 
