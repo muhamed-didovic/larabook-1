@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('meta-title', 'Welcome Foo!')
+@section('meta-title', 'Larabook')
 
 @section('content')
     <div class="jumbotron">
