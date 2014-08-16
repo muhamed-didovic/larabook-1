@@ -1,4 +1,4 @@
-<?php namespace Larabook\Registration;
+<?php namespace Larabook\Commanding\Registration;
 
 use Laracasts\Commander\CommandHandler;
 use Larabook\Entities\User\UserRepository;

@@ -2,7 +2,7 @@
 
 use View, Input, Auth, Redirect, Flash;
 use Larabook\Validation\Forms\RegistrationForm;
-use Larabook\Registration\RegisterUserCommand;
+use Larabook\Commanding\Registration\RegisterUserCommand;
 
 class RegistrationController extends BaseController {
 

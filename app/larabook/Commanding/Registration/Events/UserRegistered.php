@@ -1,4 +1,4 @@
-<?php namespace Larabook\Registration\Events;
+<?php namespace Larabook\Commanding\Registration\Events;
 
 use Larabook\Entities\User\User;
 

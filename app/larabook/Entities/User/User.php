@@ -6,7 +6,7 @@ use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 use Eloquent, Hash;
 use Laracasts\Commander\Events\EventGenerator;
-use Larabook\Registration\Events\UserRegistered;
+use Larabook\Commanding\Registration\Events\UserRegistered;
 use Laracasts\Presenter\PresentableTrait;
 use Larabook\Entities\User\FollowableTrait;
 
