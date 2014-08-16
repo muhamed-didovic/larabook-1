@@ -31,6 +31,11 @@
                             {{{ link_to_route('users.profile', 'Me', [$currentUser->username]) }}}
                         </li>
                         <li class="divider"></li>
+                        <li>
+                            <i class="glyphicon glyphicon-home"></i>
+                            {{{ link_to_route('statuses', 'Home') }}}
+                        </li>
+                        <li class="divider"></li>
                         <li><i class="glyphicon glyphicon-cog"></i>{{{ link_to_route('user.settings', 'Settings', ['username' => $currentUser->username])}}}</li>
                         <li class="divider"></li>
                         <li><i class="glyphicon glyphicon-off"></i>{{{ link_to_route('logout', 'Logout')}}}</li>
