@@ -34,15 +34,12 @@ class UserRepository {
     */
     public function findByUsername($username)
     {
-        $this->user =  User::where('username', '=', $username)->first();
+        $this->user =  User::where('username', '=', $username)->firstOrFail();
     }
 
     public function findByUsernameWithStatuses($username)
     {
-        return User::with(['statuses' => function($query)
-            {
-                $query->latest();
-            }])->whereUsername($username)->first();
+        return User::with('statuses')->whereUsername($username)->firstOrFail();
     }
 
     /**
