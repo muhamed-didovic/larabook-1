@@ -7,6 +7,8 @@
         <p>{{ $status->present()->timeSincePublished }}</p>
         {{ $status->body }}
 
-        @include('users.partials.follow-form', ['user' => $status->user])
+        @unless($status->user->isCurrent($currentUser))
+            @include('users.partials.follow-form', ['user' => $status->user])
+        @endunless
     </div>
 </article>
