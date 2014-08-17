@@ -5,34 +5,47 @@ use Illuminate\Support\ServiceProvider;
 class LarabookServiceProvider extends ServiceProvider {
 
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
+     * Indicates if loading of the service provider is defered
+     * @var boolean $defer
      */
     protected $defer = false;
 
     /**
-    * Array of IoC bindings
-    *
-    * @var array
-    */
+     * Array of bindings for the IoC
+     * @var array $bindings
+     */
     private $bindings = [
 
     ];
 
     /**
-    * Array of helper files, usually only one but allows for multiple files
-    *
-    * @var array
-    */
+     * Array of helper files to load
+     * @var array $helpers
+     */
     private $helpers = [
         'Larabook/helpers.php'
     ];
 
+    /**
+     * Array of Larabook specific commands to register
+     * @var array $commands
+     */
     private $commands = [
         'larabook.foo' => 'Larabook\Console\FooCommand'
     ];
 
+    /**
+     * A listing of events to register listeners for
+     * @var array $events
+     */
+    private $events = [
+        'Larabook.Commanding.Registration.*' => 'Larabook\EventHandlers\EmailNotifier'
+    ];
+
+    /**
+     * The boot method runs automatically
+     * @return void
+     */
     public function boot()
     {
         $this->loadFilters();
@@ -41,21 +54,38 @@ class LarabookServiceProvider extends ServiceProvider {
         $this->loadCommands();
     }
 
+    /**
+     * The register method for bindings, event listeners, etc.
+     * @return void
+     */
     public function register()
     {
         $this->registerBindings();
+        $this->registerEventListeners();
     }
 
+    /**
+     * Require the filters.php file
+     * @return void
+     */
     private function loadFilters()
     {
         require __DIR__.'/filters.php';
     }
 
+    /**
+     * Require the routes.php file
+     * @return void
+     */
     private function loadRoutes()
     {
         require __DIR__.'/routes.php';
     }
 
+    /**
+     * Register class bindings in the IoC
+     * @return void
+     */
     private function registerBindings()
     {
         foreach($this->bindings as $key => $val)
@@ -64,6 +94,10 @@ class LarabookServiceProvider extends ServiceProvider {
         }
     }
 
+    /**
+     * Require any helper files
+     * @return void
+     */
     private function loadHelpers()
     {
         foreach($this->helpers as $helper)
@@ -72,6 +106,10 @@ class LarabookServiceProvider extends ServiceProvider {
         }
     }
 
+    /**
+     * Bind any Larabook specific commands
+     * @return void
+     */
     private function loadCommands()
     {
         foreach($this->commands as $command => $class)
@@ -82,6 +120,18 @@ class LarabookServiceProvider extends ServiceProvider {
             });
 
             $this->commands($command);
+        }
+    }
+
+    /**
+     * Register event listeners
+     * @return void
+     */
+    private function registerEventListeners()
+    {
+        foreach($this->events as $event => $eventClass)
+        {
+            $this->app['events']->listen($event, $eventClass);
         }
     }
 
