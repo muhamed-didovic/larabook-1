@@ -1,17 +1,17 @@
 <?php namespace Larabook\Mailers;
 
-use Illuminate\Mail\Mailer as Mail;
+use Illuminate\Mail\Mailer as IlluminateMailer;
 
 abstract class Mailer {
     /**
      * Instance of the Laravel Mailer class
      * @var Illuminate\Mail\Mailer $mail
      */
-    protected $mail;
+    protected $mailer;
 
-    public function __construct(Mail $mail)
+    public function __construct(IlluminateMailer $mailer)
     {
-        $this->mail = $mail;
+        $this->mailer = $mailer;
     }
 
     /**
@@ -24,7 +24,7 @@ abstract class Mailer {
      */
     public function sendTo($user, $subject, $view, $data = [])
     {
-        $this->mail->queue($view, $data, function($message) use ($user, $subject)
+        $this->mailer->queue($view, $data, function($message) use ($user, $subject)
         {
             $message->to($user->email)->subject($subject);
         });

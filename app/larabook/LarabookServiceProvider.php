@@ -39,7 +39,7 @@ class LarabookServiceProvider extends ServiceProvider {
      * @var array $events
      */
     private $events = [
-        'Larabook.Commanding.Registration.*' => 'Larabook\EventHandlers\EmailNotifier'
+        'Larabook.Commanding.Registration.Events.UserRegistered' => 'Larabook\EventHandlers\EmailNotifier'
     ];
 
     /**

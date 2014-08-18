@@ -9,8 +9,10 @@ class UserMailer extends Mailer{
     {
         $subject = 'Welcome to Larabook';
         $view = 'emails.registration.confirm';
-        $data = [];
+        //4th param is data which is not used in this case
+        //defaults to empty array
+        //$data = [];
 
-        $this->sendTo($user, $subject, $view, $data);
+        $this->sendTo($user, $subject, $view);
     }
 }
