@@ -1,0 +1,32 @@
+img.top-nav-gravatar {
+    height: 30px;
+    width: 30px;
+    float: left;
+    position: relative;
+    top: -5px;
+    left: -8px;
+    border: 1px solid #555;
+}
+
+li.dropdown li {
+    height: 35px;
+}
+
+li.dropdown li i.glyphicon {
+    float: left;
+    position: relative;
+    left: 10px;
+    top:15px;
+    z-index: 1001;
+}
+
+li.dropdown li a {
+    float: left;
+    position: relative;
+    left: 15px;
+    bottom: 5px;
+}
+
+.dropdown-menu .divider {
+    margin: 5px 0;
+}
