@@ -99,3 +99,10 @@ Route::delete('follows/{id}', [
     'as' => 'follows.destroy',
     'uses' => 'Larabook\Controllers\FollowsController@destroy'
 ]);
+
+/*
+|--------------------------------------------------------------------------
+| Password Reset
+|--------------------------------------------------------------------------
+*/
+Route::controller('password', 'Larabook\Controllers\RemindersController');
