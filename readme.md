@@ -7,7 +7,7 @@ This version is very much modified from the original source because I just can't
 Haven't changed the styles to the ones submitted by Amit used in the sass partials lesson but just made the partials. https://github.com/foxted/larabook seems to have all the changed styles included.
 
 
-### Up to date with sass partials lesson
+### Up to date with password reset lesson
 
 Yep after all the changes you can still rely on Borats' two thumbs up. Thoroughly tested and all is well.
 ![Build Passing](http://cdn.memegenerator.net/instances/200x/52578731.jpg)
