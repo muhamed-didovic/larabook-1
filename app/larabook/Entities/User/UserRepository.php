@@ -2,7 +2,8 @@
 
 use Larabook\Entities\User\User;
 
-class UserRepository {
+class UserRepository
+{
 
     /**
     * Persist a user
@@ -76,5 +77,4 @@ class UserRepository {
     {
         return $user->follows()->detach($userIdToUnFollow);
     }
-
 }

@@ -2,7 +2,8 @@
 
 use Laracasts\Presenter\Presenter;
 
-class StatusPresenter extends Presenter {
+class StatusPresenter extends Presenter
+{
 
     /**
     * Get the time since status was published

@@ -4,13 +4,15 @@ use Illuminate\Auth\UserTrait;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
-use Eloquent, Hash;
+use Eloquent;
+use Hash;
 use Laracasts\Commander\Events\EventGenerator;
 use Larabook\Commanding\Registration\Events\UserRegistered;
 use Laracasts\Presenter\PresentableTrait;
 use Larabook\Entities\User\FollowableTrait;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends Eloquent implements UserInterface, RemindableInterface
+{
 
     use UserTrait, RemindableTrait, EventGenerator, PresentableTrait, FollowableTrait;
 
@@ -50,12 +52,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     */
     public function setPasswordAttribute($password)
     {
-        if(Hash::needsRehash($password))
-        {
+        if (Hash::needsRehash($password)) {
             $this->attributes['password'] = Hash::make($password);
-        }
-        else
-        {
+        } else {
             $this->attributes['password'] = $password;
         }
     }
@@ -95,9 +94,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     */
     public function isCurrent(User $user = null)
     {
-        if(is_null($user)) return false;
+        if (is_null($user)) {
+            return false;
+        }
 
         return $this->username == $user->username;
     }
-
 }

@@ -1,9 +1,17 @@
 <?php namespace Larabook\Controllers;
 
-use View, Input, Redirect, Flash, Lang, App, Hash, Password;
+use View;
+use Input;
+use Redirect;
+use Flash;
+use Lang;
+use App;
+use Hash;
+use Password;
 use Larabook\Validation\Forms\PasswordResetForm;
 
-class RemindersController extends BaseController {
+class RemindersController extends BaseController
+{
 
     protected $passwordForm;
 
@@ -29,8 +37,7 @@ class RemindersController extends BaseController {
      */
     public function postRemind()
     {
-        switch ($response = Password::remind(Input::only('email')))
-        {
+        switch ($response = Password::remind(Input::only('email'))) {
             case Password::INVALID_USER:
                 Flash::error(Lang::get($response));
                 return Redirect::back();
@@ -49,7 +56,9 @@ class RemindersController extends BaseController {
      */
     public function getReset($token = null)
     {
-        if (is_null($token)) App::abort(404);
+        if (is_null($token)) {
+            App::abort(404);
+        }
 
         return View::make('password.reset')->with('token', $token);
     }
@@ -62,25 +71,25 @@ class RemindersController extends BaseController {
     public function postReset()
     {
         $credentials = Input::only(
-            'email', 'password', 'password_confirmation', 'token'
+            'email',
+            'password',
+            'password_confirmation',
+            'token'
         );
 
-        Password::validator(function($credentials)
-        {
+        Password::validator(function ($credentials) {
             //return strlen($credentials['password']) >= 3;
 
             return $this->passwordForm->validate($credentials);
         });
 
-        $response = Password::reset($credentials, function($user, $password)
-        {
+        $response = Password::reset($credentials, function ($user, $password) {
             $user->password = Hash::make($password);
 
             $user->save();
         });
 
-        switch ($response)
-        {
+        switch ($response) {
             case Password::INVALID_PASSWORD:
             case Password::INVALID_TOKEN:
             case Password::INVALID_USER:
@@ -92,5 +101,4 @@ class RemindersController extends BaseController {
                 return Redirect::to('/');
         }
     }
-
 }

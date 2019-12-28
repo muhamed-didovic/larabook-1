@@ -1,6 +1,7 @@
 <?php namespace Larabook\Commanding\Registration;
 
-class RegisterUserCommand {
+class RegisterUserCommand
+{
 
     public $username;
 

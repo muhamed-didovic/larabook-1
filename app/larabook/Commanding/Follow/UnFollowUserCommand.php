@@ -2,7 +2,8 @@
 
 use InvalidArgumentException;
 
-class UnFollowUserCommand {
+class UnFollowUserCommand
+{
 
     protected $userIdToUnFollow;
     protected $userId;
@@ -15,18 +16,19 @@ class UnFollowUserCommand {
 
     public function getUserIdToUnFollow()
     {
-        if(! is_numeric($this->userIdToUnFollow))
-            throw new InvalidArgumentException ('Expects id to be an integer.');
+        if (! is_numeric($this->userIdToUnFollow)) {
+            throw new InvalidArgumentException('Expects id to be an integer.');
+        }
 
         return $this->userIdToUnFollow;
     }
 
     public function getUserId()
     {
-         if(! is_numeric($this->userIdToUnFollow))
-            throw new InvalidArgumentException ('Expects id to be an integer.');
+        if (! is_numeric($this->userIdToUnFollow)) {
+            throw new InvalidArgumentException('Expects id to be an integer.');
+        }
 
         return $this->userId;
     }
-
 }

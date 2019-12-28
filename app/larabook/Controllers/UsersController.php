@@ -1,9 +1,14 @@
 <?php namespace Larabook\Controllers;
 
-use View, Input, Auth, Redirect, Flash;
+use View;
+use Input;
+use Auth;
+use Redirect;
+use Flash;
 use Larabook\Entities\User\UserRepository;
 
-class UsersController extends BaseController {
+class UsersController extends BaseController
+{
 
     protected $repository;
 
@@ -22,8 +27,9 @@ class UsersController extends BaseController {
     public function settings($username)
     {
         //shouldn't reach here because of the route filter auth
-        if(Auth::user()->username != $username)
+        if (Auth::user()->username != $username) {
             return Redirect::route('login.create');
+        }
 
         //get user settings
         //simulated

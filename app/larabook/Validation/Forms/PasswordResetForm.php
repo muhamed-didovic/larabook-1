@@ -2,7 +2,8 @@
 
 use Laracasts\Validation\FormValidator;
 
-class PasswordResetForm extends FormValidator {
+class PasswordResetForm extends FormValidator
+{
 
     /**
     * Validation rules for the password reset form

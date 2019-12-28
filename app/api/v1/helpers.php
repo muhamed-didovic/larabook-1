@@ -1,7 +1,6 @@
 <?php
 
-if( ! function_exists('foo'))
-{
+if (! function_exists('foo')) {
     function foo()
     {
         return 'foohelper';

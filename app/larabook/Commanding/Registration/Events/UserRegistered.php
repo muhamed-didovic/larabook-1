@@ -2,7 +2,8 @@
 
 use Larabook\Entities\User\User;
 
-class UserRegistered {
+class UserRegistered
+{
 
     public $user;
 

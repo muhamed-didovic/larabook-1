@@ -5,7 +5,8 @@ use Larabook\Entities\User\UserRepository;
 use Larabook\Entities\User\User;
 use Laracasts\Commander\Events\DispatchableTrait;
 
-class RegisterUserCommandHandler implements CommandHandler {
+class RegisterUserCommandHandler implements CommandHandler
+{
 
     use DispatchableTrait;
 
@@ -25,7 +26,9 @@ class RegisterUserCommandHandler implements CommandHandler {
     public function handle($command)
     {
         $user = User::register(
-            $command->username, $command->email, $command->password
+            $command->username,
+            $command->email,
+            $command->password
         );
 
         $this->repository->save($user);
@@ -34,5 +37,4 @@ class RegisterUserCommandHandler implements CommandHandler {
 
         return $user;
     }
-
 }

@@ -1,5 +1,6 @@
 <?php namespace Api\Controllers;
 
-class StatusesController extends BaseController {
+class StatusesController extends BaseController
+{
 
 }

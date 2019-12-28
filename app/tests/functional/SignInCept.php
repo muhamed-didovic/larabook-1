@@ -8,4 +8,3 @@ $I->signIn();
 $I->seeInCurrentUrl('/statuses');
 $I->see('Welcome Back!');
 $I->assertTrue(Auth::check());
-

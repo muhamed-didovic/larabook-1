@@ -4,7 +4,8 @@ use Laracasts\Commander\Events\EventListener;
 use Larabook\Commanding\Registration\Events\UserRegistered;
 use Larabook\Mailers\UserMailer;
 
-class EmailNotifier extends EventListener {
+class EmailNotifier extends EventListener
+{
 
     protected $mailer;
 

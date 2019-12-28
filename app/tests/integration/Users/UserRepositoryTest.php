@@ -37,7 +37,6 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
         //     'username' => 'johnddoe',
         //     'email' => 'john@gmail.com'
         // ]);
-
     }
 
     /** @test */
@@ -81,5 +80,4 @@ class UserRepositoryTest extends \Codeception\TestCase\Test
 
         $this->assertFalse($users[0]->follows->contains($users[1]->id));
     }
-
 }

@@ -2,7 +2,8 @@
 
 use InvalidArgumentException;
 
-class FollowUserCommand {
+class FollowUserCommand
+{
 
     protected $userIdToFollow;
     protected $userId;
@@ -15,18 +16,19 @@ class FollowUserCommand {
 
     public function getUserIdToFollow()
     {
-        if(! is_numeric($this->userIdToFollow))
-            throw new InvalidArgumentException ('Expects id to be an integer.');
+        if (! is_numeric($this->userIdToFollow)) {
+            throw new InvalidArgumentException('Expects id to be an integer.');
+        }
 
         return $this->userIdToFollow;
     }
 
     public function getUserId()
     {
-         if(! is_numeric($this->userIdToFollow))
-            throw new InvalidArgumentException ('Expects id to be an integer.');
+        if (! is_numeric($this->userIdToFollow)) {
+            throw new InvalidArgumentException('Expects id to be an integer.');
+        }
 
         return $this->userId;
     }
-
 }

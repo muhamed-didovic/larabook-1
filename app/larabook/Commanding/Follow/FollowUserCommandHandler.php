@@ -3,7 +3,8 @@
 use Laracasts\Commander\CommandHandler;
 use Larabook\Entities\User\UserRepository;
 
-class FollowUserCommandHandler implements CommandHandler {
+class FollowUserCommandHandler implements CommandHandler
+{
 
     protected $userRepo;
 

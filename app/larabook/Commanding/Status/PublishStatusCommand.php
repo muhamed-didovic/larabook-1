@@ -1,6 +1,7 @@
 <?php namespace Larabook\Commanding\Status;
 
-class PublishStatusCommand {
+class PublishStatusCommand
+{
     public $body;
     public $userId;
 

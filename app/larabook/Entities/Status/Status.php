@@ -5,7 +5,8 @@ use Laracasts\Commander\Events\EventGenerator;
 use Larabook\Commanding\Status\Events\StatusWasPublished;
 use Laracasts\Presenter\PresentableTrait;
 
-class Status extends Eloquent {
+class Status extends Eloquent
+{
 
     use EventGenerator, PresentableTrait;
 

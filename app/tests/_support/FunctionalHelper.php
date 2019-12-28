@@ -35,5 +35,4 @@ class FunctionalHelper extends \Codeception\Module
     {
         return TestDummy::create($model, $overrides);
     }
-
 }

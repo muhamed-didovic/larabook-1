@@ -3,7 +3,8 @@
 use Faker\Factory as Faker;
 use Larabook\Entities\User\User;
 
-class UsersTableSeeder extends Seeder {
+class UsersTableSeeder extends Seeder
+{
 
     public function run()
     {
@@ -16,8 +17,7 @@ class UsersTableSeeder extends Seeder {
             'password' => 'secret'
         ]);
 
-        foreach(range(1, 50) as $index)
-        {
+        foreach (range(1, 50) as $index) {
             User::create([
                 'username' => $faker->word . $index,
                 'email' => $faker->email,
@@ -25,5 +25,4 @@ class UsersTableSeeder extends Seeder {
             ]);
         }
     }
-
 }

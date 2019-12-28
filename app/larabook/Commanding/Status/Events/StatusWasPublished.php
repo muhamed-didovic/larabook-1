@@ -1,6 +1,7 @@
 <?php namespace Larabook\Commanding\Status\Events;
 
-class StatusWasPublished {
+class StatusWasPublished
+{
 
     /**
     * The published status body
@@ -12,5 +13,4 @@ class StatusWasPublished {
     {
         $this->body = $body;
     }
-
 }

@@ -59,5 +59,4 @@ class StatusRepositoryTest extends \Codeception\TestCase\Test
             'user_id' => $user->id
         ]);
     }
-
 }

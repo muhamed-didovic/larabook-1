@@ -2,7 +2,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class LarabookServiceProvider extends ServiceProvider {
+class LarabookServiceProvider extends ServiceProvider
+{
 
     /**
      * Indicates if loading of the service provider is defered
@@ -88,8 +89,7 @@ class LarabookServiceProvider extends ServiceProvider {
      */
     private function registerBindings()
     {
-        foreach($this->bindings as $key => $val)
-        {
+        foreach ($this->bindings as $key => $val) {
             $this->app->bind($key, $val);
         }
     }
@@ -100,8 +100,7 @@ class LarabookServiceProvider extends ServiceProvider {
      */
     private function loadHelpers()
     {
-        foreach($this->helpers as $helper)
-        {
+        foreach ($this->helpers as $helper) {
             require app_path() . '/' . $helper;
         }
     }
@@ -112,10 +111,8 @@ class LarabookServiceProvider extends ServiceProvider {
      */
     private function loadCommands()
     {
-        foreach($this->commands as $command => $class)
-        {
-            $this->app->bindShared($command, function($app) use ($class)
-            {
+        foreach ($this->commands as $command => $class) {
+            $this->app->bindShared($command, function ($app) use ($class) {
                 return $app->make($class);
             });
 
@@ -129,10 +126,8 @@ class LarabookServiceProvider extends ServiceProvider {
      */
     private function registerEventListeners()
     {
-        foreach($this->events as $event => $eventClass)
-        {
+        foreach ($this->events as $event => $eventClass) {
             $this->app['events']->listen($event, $eventClass);
         }
     }
-
 }

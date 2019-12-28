@@ -2,7 +2,8 @@
 
 use Laracasts\Validation\FormValidator;
 
-class LoginForm extends FormValidator {
+class LoginForm extends FormValidator
+{
 
     /**
     * Validation rules for the login form
@@ -13,5 +14,4 @@ class LoginForm extends FormValidator {
         'email' => 'required|email',
         'password' => 'required'
     ];
-
 }
