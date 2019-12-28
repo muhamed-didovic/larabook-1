@@ -1,10 +1,15 @@
 <?php namespace Larabook\Controllers;
 
-use View, Input, Auth, Redirect, Flash;
+use View;
+use Input;
+use Auth;
+use Redirect;
+use Flash;
 use Larabook\Validation\Forms\RegistrationForm;
 use Larabook\Commanding\Registration\RegisterUserCommand;
 
-class RegistrationController extends BaseController {
+class RegistrationController extends BaseController
+{
 
     /**
     * @var RegistrationForm

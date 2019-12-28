@@ -2,7 +2,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class ApiServiceProvider extends ServiceProvider {
+class ApiServiceProvider extends ServiceProvider
+{
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -33,16 +34,14 @@ class ApiServiceProvider extends ServiceProvider {
 
     private function registerBindings()
     {
-        foreach($this->bindings as $key => $val)
-        {
+        foreach ($this->bindings as $key => $val) {
             $this->app->bind($key, $val);
         }
     }
 
     private function loadHelpers()
     {
-        foreach($this->helpers as $helper)
-        {
+        foreach ($this->helpers as $helper) {
             require app_path() . '/' . $helper;
         }
     }
@@ -67,5 +66,4 @@ class ApiServiceProvider extends ServiceProvider {
     // {
     //     return array();
     // }
-
 }

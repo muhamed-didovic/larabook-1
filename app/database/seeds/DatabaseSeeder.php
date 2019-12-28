@@ -1,6 +1,7 @@
 <?php
 
-class DatabaseSeeder extends Seeder {
+class DatabaseSeeder extends Seeder
+{
 
     /**
     * Tables to be truncated and seeded
@@ -39,8 +40,7 @@ class DatabaseSeeder extends Seeder {
 
         $this->disableForeignKeyChecks($env, $dbDriver);
 
-        foreach ($this->tables as $table)
-        {
+        foreach ($this->tables as $table) {
             DB::table($table)->truncate();
         }
 
@@ -55,8 +55,7 @@ class DatabaseSeeder extends Seeder {
     */
     private function seedTables()
     {
-        foreach ($this->tables as $table)
-        {
+        foreach ($this->tables as $table) {
             $this->call($this->snakeToCamel($table));
         }
     }
@@ -81,9 +80,13 @@ class DatabaseSeeder extends Seeder {
     */
     private function disableForeignKeyChecks($env, $dbDriver)
     {
-        if($dbDriver == 'sqlite') return; //no FK checks for sqlite
+        if ($dbDriver == 'sqlite') {
+            return; //no FK checks for sqlite
+        }
 
-        if($env == 'development') DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        if ($env == 'development') {
+            DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        }
     }
 
 
@@ -96,9 +99,12 @@ class DatabaseSeeder extends Seeder {
     */
     private function enableForeignKeyChecks($env, $dbDriver)
     {
-        if($dbDriver == 'sqlite') return; //no FK checks for sqlite
+        if ($dbDriver == 'sqlite') {
+            return; //no FK checks for sqlite
+        }
 
-        if($env == 'development') DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        if ($env == 'development') {
+            DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        }
     }
-
 }

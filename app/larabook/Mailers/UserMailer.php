@@ -3,7 +3,8 @@
 use Larabook\Mailers\Mailer;
 use Larabook\Entities\User\User;
 
-class UserMailer extends Mailer{
+class UserMailer extends Mailer
+{
 
     public function sendWelcomeMessageTo(User $user)
     {

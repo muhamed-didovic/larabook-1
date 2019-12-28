@@ -47,8 +47,7 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 |
 */
 
-App::error(function(Exception $exception, $code)
-{
+App::error(function (Exception $exception, $code) {
     Log::error($exception);
 });
 
@@ -61,8 +60,7 @@ App::error(function(Exception $exception, $code)
 | thrown by the laracasts/validation package
 |
 */
-App::error(function(Laracasts\Validation\FormValidationException $e, $code)
-{
+App::error(function (Laracasts\Validation\FormValidationException $e, $code) {
     return Redirect::back()->withInput()->withErrors($e->getErrors());
 });
 
@@ -77,8 +75,7 @@ App::error(function(Laracasts\Validation\FormValidationException $e, $code)
 |
 */
 
-App::down(function()
-{
+App::down(function () {
     return Response::make("Be right back!", 503);
 });
 

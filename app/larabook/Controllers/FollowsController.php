@@ -1,10 +1,14 @@
 <?php namespace Larabook\Controllers;
 
-use Input, Auth, Redirect, Flash;
+use Input;
+use Auth;
+use Redirect;
+use Flash;
 use Larabook\Commanding\Follow\FollowUserCommand;
 use Larabook\Commanding\Follow\UnFollowUserCommand;
 
-class FollowsController extends BaseController {
+class FollowsController extends BaseController
+{
 
     /**
     * Follow a user

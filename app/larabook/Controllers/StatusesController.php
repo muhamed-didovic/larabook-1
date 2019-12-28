@@ -1,11 +1,16 @@
 <?php namespace Larabook\Controllers;
 
-use View, Input, Auth, Redirect, Flash;
+use View;
+use Input;
+use Auth;
+use Redirect;
+use Flash;
 use Larabook\Validation\Forms\StatusForm;
 use Larabook\Commanding\Status\PublishStatusCommand;
 use Larabook\Entities\Status\StatusRepository;
 
-class StatusesController extends BaseController {
+class StatusesController extends BaseController
+{
 
     /**
     * @var StatusForm $statusForm
@@ -119,6 +124,4 @@ class StatusesController extends BaseController {
     {
         //
     }
-
-
 }

@@ -5,7 +5,8 @@ use Laracasts\Commander\Events\DispatchableTrait;
 use Larabook\Entities\Status\Status;
 use Larabook\Entities\Status\StatusRepository;
 
-class PublishStatusCommandHandler implements CommandHandler {
+class PublishStatusCommandHandler implements CommandHandler
+{
 
     use DispatchableTrait;
 
@@ -37,5 +38,4 @@ class PublishStatusCommandHandler implements CommandHandler {
 
         return $status;
     }
-
 }

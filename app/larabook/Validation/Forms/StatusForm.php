@@ -2,7 +2,8 @@
 
 use Laracasts\Validation\FormValidator;
 
-class StatusForm extends FormValidator {
+class StatusForm extends FormValidator
+{
 
     /**
     * Validation rules for the status form
@@ -12,5 +13,4 @@ class StatusForm extends FormValidator {
     protected $rules = [
         'body' => 'required' //meh, might make a rule in the future
     ];
-
 }

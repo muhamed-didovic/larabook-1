@@ -1,6 +1,7 @@
 <?php namespace Larabook\Entities\User;
 
-trait FollowableTrait {
+trait FollowableTrait
+{
     public function follows()
     {
         return $this->belongsToMany(static::class, 'follows', 'follower_id', 'followed_id')->withTimestamps();
@@ -13,7 +14,9 @@ trait FollowableTrait {
 
     public function isFollowedBy(User $currentUser = null)
     {
-        if(is_null($currentUser)) return false;
+        if (is_null($currentUser)) {
+            return false;
+        }
 
         $followedIds = $currentUser->follows()->lists('followed_id');
 

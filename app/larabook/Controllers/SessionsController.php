@@ -1,9 +1,14 @@
 <?php namespace Larabook\Controllers;
 
-use View, Input, Auth, Redirect, Flash;
+use View;
+use Input;
+use Auth;
+use Redirect;
+use Flash;
 use Larabook\Validation\Forms\LoginForm;
 
-class SessionsController extends BaseController {
+class SessionsController extends BaseController
+{
 
     protected $loginForm;
 
@@ -35,8 +40,7 @@ class SessionsController extends BaseController {
 
         $this->loginForm->validate($input);
 
-        if( ! Auth::attempt($input))
-        {
+        if (! Auth::attempt($input)) {
             Flash::message('Invalid Credentials');
 
              return Redirect::back()->withInput();
@@ -45,7 +49,7 @@ class SessionsController extends BaseController {
         Flash::message('Welcome Back!');
 
         return Redirect::to('statuses');
-}
+    }
 
     /**
      * Logout the currently logged in user
@@ -59,6 +63,4 @@ class SessionsController extends BaseController {
         Flash::message('You have been logged out');
         return Redirect::home();
     }
-
-
 }

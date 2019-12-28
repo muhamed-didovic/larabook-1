@@ -3,7 +3,8 @@ require_once __DIR__.'/vendor/autoload.php';
 
 use Robo\Tasks;
 
-class RoboFile extends Tasks {
+class RoboFile extends Tasks
+{
     public function sayHello()
     {
         // $codePage = exec('chcp');

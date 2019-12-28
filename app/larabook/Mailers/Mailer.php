@@ -2,7 +2,8 @@
 
 use Illuminate\Mail\Mailer as IlluminateMailer;
 
-abstract class Mailer {
+abstract class Mailer
+{
     /**
      * Instance of the Laravel Mailer class
      * @var Illuminate\Mail\Mailer $mail
@@ -24,8 +25,7 @@ abstract class Mailer {
      */
     public function sendTo($user, $subject, $view, $data = [])
     {
-        $this->mailer->queue($view, $data, function($message) use ($user, $subject)
-        {
+        $this->mailer->queue($view, $data, function ($message) use ($user, $subject) {
             $message->to($user->email)->subject($subject);
         });
     }

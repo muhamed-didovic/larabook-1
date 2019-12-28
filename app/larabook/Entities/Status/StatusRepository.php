@@ -3,7 +3,8 @@
 use Larabook\Entities\Status\Status;
 use Larabook\Entities\User\User;
 
-class StatusRepository {
+class StatusRepository
+{
 
     /**
     * Get all statuses
@@ -39,5 +40,4 @@ class StatusRepository {
 
         return Status::whereIn('user_id', $followIds)->latest()->get();
     }
-
 }

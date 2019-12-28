@@ -4,7 +4,8 @@ use Faker\Factory as Faker;
 use Larabook\Entities\Status\Status;
 use Larabook\Entities\User\User;
 
-class StatusesTableSeeder extends Seeder {
+class StatusesTableSeeder extends Seeder
+{
 
     public function run()
     {
@@ -12,8 +13,7 @@ class StatusesTableSeeder extends Seeder {
 
         $userIds = User::lists('id');
 
-        foreach(range(1, 1000) as $index)
-        {
+        foreach (range(1, 1000) as $index) {
             Status::create([
                 'user_id' => $faker->randomElement($userIds),
                 'body' => $faker->sentence(),
@@ -21,5 +21,4 @@ class StatusesTableSeeder extends Seeder {
             ]);
         }
     }
-
 }
